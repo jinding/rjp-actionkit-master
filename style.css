@@ -1454,10 +1454,10 @@ a.ak-button,
 	box-sizing:border-box;
 	padding:10px;
 	height:auto;
-	font-size:2em;
+	font-size:1.5em;
 	text-transform:uppercase;
     color: #fff;
-    font-weight: 800;
+    font-weight: 600;
     margin: 10px auto;
     border: none;
     cursor: pointer;
