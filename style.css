@@ -520,12 +520,12 @@ div.ak-page-container {
   color: #FFF;
   padding: 0 2%;
   box-sizing: border-box;
-  font-family: "din-condensed", sans-serif;
+  font-family: "proxima-nova", sans-serif;
   margin: 0 0 45px 0;
   overflow: hidden;
 }
 .ak-page-footer p {
-	font-family: "din-condensed", sans-serif;
+	font-family: "proxima-nova", sans-serif;
 	font-size:23px;
 }
 .ak-page-footer-contents {
@@ -723,10 +723,10 @@ html {
     font-size: 18px;
 }
 h1, h2, h3, h4, h5, h6, button {
-	font-family: "din-condensed", sans-serif;
+	font-family: "proxima-nova", sans-serif;
 }
 p {
-	font-family: "ff-tisa-web-pro", sans-serif;
+	font-family: "proxima-nova", sans-serif;
 }
 /*
     With HTML base font of 15.5px
@@ -984,7 +984,7 @@ body.js li.if-js { display: list-item; }
     margin-bottom: 6px;
     margin-top: 0;
 	font-size:22px;
-	font-family: "din-condensed",sans-serif;
+	font-family: "proxima-nova",sans-serif;
     font-weight: 300;
     color: #333;
     box-sizing: border-box;
@@ -1024,7 +1024,7 @@ div.radio-item {
 
 .ak-styled-fields label {
 	font-size:24px;
-	font-family: "din-condensed",sans-serif;
+	font-family: "proxima-nova",sans-serif;
     font-weight: 300;
     color: #939393;
     line-height: 32px;
@@ -1473,7 +1473,7 @@ a.ak-button:hover,
 button,
 input[type="submit"] {
     display: block;
-	font-family: "din-condensed", sans-serif;
+	font-family: "proxima-nova", sans-serif;
 }
 a.ak-button,
 .ak-button {
@@ -1526,7 +1526,7 @@ input[type="submit"].ak-btn-short {
     border: none;
     width: auto;
     display: inline-block;
-	font-family: "din-condensed", sans-serif;
+	font-family: "proxima-nova", sans-serif;
 }
 
 .ak-btn-search,
@@ -1534,7 +1534,7 @@ input[type="submit"].ak-btn-search {
     display: inline-block;
     position: relative;
     top: 2px;
-	font-family: "din-condensed", sans-serif;
+	font-family: "proxima-nova", sans-serif;
 }
 
 /* Used when previewing a page from within the admin */
@@ -1557,7 +1557,7 @@ a.ak-share-button {
     padding: 16px;
     padding-left: 60px;
     text-align: left;
-	font-family: "din-condensed", sans-serif;
+	font-family: "proxima-nova", sans-serif;
 	line-height:28px;
 }
 .ak-share-button.ak-facebook {
@@ -2907,7 +2907,7 @@ font-size:24px
     border: none;
     cursor: pointer;
     text-align: center;
-    font-family: "din-condensed", sans-serif;
+    font-family: "proxima-nova", sans-serif;
 }
 #event-create-form input[type="submit"]:hover {
     background-color: #a31f20;
@@ -3063,7 +3063,7 @@ input[type="submit"] {
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
-	font-family: "din-condensed", sans-serif;
+	font-family: "proxima-nova", sans-serif;
 }
 
 /* label positioning on create event page */
