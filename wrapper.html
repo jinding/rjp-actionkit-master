@@ -31,13 +31,8 @@
         /resources/actionkit.js
     {% end %}
     <style>
-    {% include "./style.css" %}
-    
-    <link rel="icon" href="https://realjusticepac.org/wp-content/uploads/2018/02/cropped-favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" href="https://realjusticepac.org/wp-content/uploads/2018/02/cropped-favicon-192x192.png" sizes="192x192" />
-    <link rel="apple-touch-icon-precomposed" href="https://realjusticepac.org/wp-content/uploads/2018/02/cropped-favicon-180x180.png" />
-    <meta name="msapplication-TileImage" content="https://realjusticepac.org/wp-content/uploads/2018/02/cropped-favicon-270x270.png" />
-
+	{% include "./style.css" %}
+ 
     {% if templateset.custom_fields.font_size %}
         html {
             font-size: {{ templateset.custom_fields.font_size }};
