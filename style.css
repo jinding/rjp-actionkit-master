@@ -514,7 +514,7 @@ div.ak-page-container {
 .ak-page-footer {
     text-align: right;
     border-top: 1px solid #efefef;
-    margin-top: 10px;
+    margin-top: 0px;
     width: 100%;
     clear: both;
 	  background-color: #000;
