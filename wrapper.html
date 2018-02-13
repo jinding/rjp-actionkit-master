@@ -11,7 +11,7 @@
     {% block share_metatags %}
     {{ page.followup.share_title_tag }}
     {{ page.followup.share_description_tag }}
-    {% if page.followup.share_image_tag %}{{ page.followup.share_image_tag }}{% else %}<meta name="og:image" content="https://actionnetwork.org/user_files/user_files/000/014/549/original/metadata.png">{% endif %}
+    {{ page.followup.share_image_tag }}
     {{ page.followup.share_url_tag }}
     <meta property="og:site_name" content="{% filter ak_text:"org_name" %}{% client_name %}{% endfilter %}">
     <meta property="og:type" content="article">
