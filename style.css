@@ -540,7 +540,7 @@ div.ak-page-container {
     text-decoration: underline;
 }
 
-.ak-page-footer-dislaimer {
+.ak-page-footer-dislaimer p {
   border: 1px solid #FFF;
 }
 
