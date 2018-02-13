@@ -871,9 +871,9 @@ h2 {
 
 /* Used for page section headings */
 h3 {
+    color: #f5452e
     font-size: 1.42em;
     font-size: 1.42rem;
-    font-weight: 200;
     /* margin: 10px 0 10px; */
     margin: 18px 0 4px;
     /* new margins for event create. double check it's ok elsewhere.
