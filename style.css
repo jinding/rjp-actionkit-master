@@ -540,6 +540,10 @@ div.ak-page-container {
     text-decoration: underline;
 }
 
+.ak-page-footer-dislaimer {
+  border: 1px solid #FFF;
+}
+
 @media (min-width: 750px) {
    .ak-page-container,
    .ak-page-header-contents {
