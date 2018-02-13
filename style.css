@@ -503,7 +503,7 @@ div.ak-page-container {
 }
 .ak-page-divider-angle {
 	width:150%;
-	background-color:#FFF;
+	background-color:#404040;
 	height:140px;
         position:relative;
         top:-60px;
@@ -512,18 +512,17 @@ div.ak-page-container {
 	z-index:-1;
 }
 .ak-page-footer {
-    text-align: right;
-    border-top: 1px solid #efefef;
-    margin-top: 0px;
-    width: 100%;
-    clear: both;
-	  background-color: #000;
-    color: #FFF;
-    padding: 0 2%;
-    box-sizing: border-box;
-	font-family: "din-condensed", sans-serif;
-	margin:45px 0;
-	overflow: hidden;
+  text-align: right;
+  border-top: 1px solid #404040;
+  width: 100%;
+  clear: both;
+  background-color: #000;
+  color: #FFF;
+  padding: 0 2%;
+  box-sizing: border-box;
+  font-family: "din-condensed", sans-serif;
+  margin: 0 0 45px 0;
+  overflow: hidden;
 }
 .ak-page-footer p {
 	font-family: "din-condensed", sans-serif;
