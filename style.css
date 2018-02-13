@@ -1125,7 +1125,7 @@ div.radio-item {
     .ak-labels-before label {
         font-size: 1.00em;
         font-size: 1.00rem;
-        top: 9px;
+        top: 11px;
     }
     .ak-labels-before label span {
         white-space: normal;
@@ -2894,7 +2894,7 @@ label.ak-donate-step:hover div.ak-step-number {
 
 #event-create-form label {
 color:#000;
-font-size:24px
+font-size:1.1em;
 }
 #event-create-form select {
 	display: inline-block;
