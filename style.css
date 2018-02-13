@@ -1462,6 +1462,7 @@ a.ak-button,
     border: none;
     cursor: pointer;
     text-align: center;
+  background-color: #f5452e;
 }
 button:hover,
 input[type="submit"]:hover,
