@@ -140,7 +140,7 @@
 					{% endif %}
 					</div>
 					{% if campaign.show_attendee_count %}<div class="attendeecount">
-						<p><strong>Signups:</strong> { event.attendee_count }} attendee{{ event.attendee_count|pluralize }}</p>
+						<p><strong>Signups:</strong> {{ event.attendee_count }} attendee{{ event.attendee_count|pluralize }}</p>
 					</div>{% endif %}
 				</div>
 			{% endif %}
