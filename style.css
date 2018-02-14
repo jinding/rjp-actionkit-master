@@ -874,6 +874,7 @@ h3 {
     font-size: 1.42rem;
     /* margin: 10px 0 10px; */
     margin: 18px 0 4px;
+    font-weight:200;
     /* new margins for event create. double check it's ok elsewhere.
        if not, add body.ak-pagetype-event_create to the 2nd margin line &
        uncomment the 1st.... */
