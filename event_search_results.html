@@ -118,7 +118,7 @@
         	{% if not all %}
 				<div class="{% if event.is_in_past or event.is_full %}ak-event-disabled{% endif %}">
 					<div class="ak-info-column">
-						<p style="font-weight:bold;color:#e83d3e">{{ event.starts_at }}</p>
+						<p style="font-weight:bold">{{ event.starts_at }}</p>
 						<p><span style="font-weight:bold;">{{ event.venue }}</span>&nbsp;<a href="https://www.google.com/maps/place/{{ event.address1|urlencode }},%20{{ event.city_etc|urlencode }}" target="_blank" class="ak-larger-text"><small><img src="/media/modern/blue_marker.png" class="ak-marker"/> Google Maps</a></small><br>{{ event.address1 }}, {{ event.city }}, {{ event.state }} {{ event.zip }}</p>
 					
 
