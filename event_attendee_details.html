@@ -3,33 +3,33 @@
 {% filter collapse_spaces %}
 
 <div>
-	<p style="font-weight:bold;color:#e83d3e">{{ event.get_starts_at_display }} {% if event.is_in_past %}
+	<p>{{ event.venue }}<br>{{ event.address1 }}<br>
+		{{ event.city }}, {{ event.state }} {{ event.zip }}</p>
+	<p><strong>When:</strong> {{ event.get_starts_at_display }} {% if event.is_in_past %}
                     <span class="ak-error ak-event-over-notice">
                         (event is now over)
                     </span>
                 {% endif %}</p>
-						<p><span style="font-weight:bold;">{{ event.venue }}</span><br>{{ event.address1 }}, {{ event.city }}, {{ event.state }} {{ event.zip }}</p>
-
 	{% if campaign.show_directions and event.directions %}
-							<p class="ak-event-directions">
-								<span><strong>Directions:</strong></span> <br>
-								{{ event.directions }} {% if event.distance|is_nonblank %}
-				<span class="ak-event-distance">({{ event.distance_str }} away)</span>
-					   {% endif %}</p>
-					{% endif %}
+		<p class="ak-event-directions">
+			<span><strong>Directions:</strong></span> <br>
+			{{ event.directions }} {% if event.distance|is_nonblank %}
+			<span class="ak-event-distance">({{ event.distance_str }} away)</span>
+			{% endif %}</p>
+	{% endif %}
 
    <div class="ak-description-column">
-					{% if campaign.show_public_description %}
-						{% if event.public_description %}
-							<p class="ak-event-description"><span><strong>Description:</strong></span> <br>
-								{{ event.public_description }}
-							</p>
-						{% endif %}
-					{% endif %}
-					</div>
-					{% if campaign.show_attendee_count %}<div class="attendeecount">
-						<p><strong>Signups:</strong> {{ event.attendee_count }} attendee{{ event.attendee_count|pluralize }} so far.</p>
-					</div>{% endif %}
+		{% if campaign.show_public_description %}
+			{% if event.public_description %}
+				<p class="ak-event-description"><span><strong>Description:</strong></span> 
+					{{ event.public_description }}
+				</p>
+			{% endif %}
+		{% endif %}
+	</div>
+	{% if campaign.show_attendee_count %}<div class="attendeecount">
+		<p><strong>Signups:</strong> {{ event.attendee_count }} attendee{{ event.attendee_count|pluralize }}</p>
+	</div>{% endif %}
 
 </div>
 
