@@ -2925,10 +2925,6 @@ button.ak-event-search {
     top: 2px;
 }
 
-.ak-event-search select#id_country {
-	height: 38px;
-}
-
 p.ak-event-title a {
     font-size: 1.42em;
     font-size: 1.42rem;
