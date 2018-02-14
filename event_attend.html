@@ -121,7 +121,6 @@ $(window).on('load', function (){
             </div>
 
             <div class="ak-grid-col ak-grid-col-6-of-12">
-                <h3>RSVP to attend this event</h3>
                 <div id="event-attend-form" class="{{templateset.custom_fields.field_errors_class|default:"ak-errs-below"}}">
                     <div class="{{templateset.custom_fields.field_labels_class|default:"ak-labels-overlaid"}}">
                         {% if not update %}
@@ -155,7 +154,7 @@ $(window).on('load', function (){
                         <input type="hidden" name="event_signup_ground_rules" value="1">
                     {% endif %}
                     <div>
-                    <button type="submit" class="ak-submit-button">{% if update %}Update signup{% else %}{% if page.custom_fields.submit_button_name %}{{ page.custom_fields.submit_button_name }}{% else %}Sign up for event{% endif %}{% endif %}</button>
+                    <button type="submit" class="ak-submit-button">{% if update %}Update signup{% else %}{% if page.custom_fields.submit_button_name %}{{ page.custom_fields.submit_button_name }}{% else %}RSVP to Attend{% endif %}{% endif %}</button>
                     </div>
                 </div>           
             </div>
