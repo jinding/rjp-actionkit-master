@@ -148,7 +148,11 @@
     <!-- Title -->
     <div class="ak-grid-row">
         <div class="ak-grid-col ak-grid-col-12-of-12">
-                <h2>Event tools</h2>
+                <h2>{% if campaign.use_title and campaign.show_title and event.title %}
+                    {{ event.title }}
+                    {% else %}
+                    {{ campaign.local_title }}
+                    {% endif %} </h2>
 
             <!-- Message from mothership -->
             <div id="host-tools-intro">
