@@ -1475,7 +1475,7 @@ button:hover,
 input[type="submit"]:hover,
 a.ak-button:hover,
 .ak-button:hover {
-    background-color: #a31f20;
+    background-color: #bc3523;
 }
 button,
 input[type="submit"] {
@@ -2917,7 +2917,7 @@ font-size:1.1em;
     font-family: "proxima-nova", sans-serif;
 }
 #event-create-form input[type="submit"]:hover {
-    background-color: #a31f20;
+    background-color: #bc3523;
 }
 
 button.ak-event-search {
