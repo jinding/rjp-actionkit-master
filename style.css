@@ -2328,7 +2328,7 @@ span.ak-target-separator {
 }
 @media (min-width:480px) {
     .ak-steps-area h3 label.ak-step-label {
-        color: #4b4b4b;
+        color: #000;
     }
     .ak-steps-area h3 div.ak-step-number {
         /* border: 2px solid #fff; */
