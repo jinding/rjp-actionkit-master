@@ -1630,7 +1630,8 @@ a.ak-small-share-button.ak-share-button.ak-twitter {
  border:0; border-radius:0;
 border-left: 6px solid #0079bb;
 box-sizing:border-box;
-padding: 20px 15px;background-color:#FFF;
+padding: 20px 15px;
+background-color:#ebebeb;
 }
 
 .ak-field-box.ak-event-disabled {
@@ -1862,7 +1863,7 @@ div.ak-text-expander.ak-truncated + .ak-read-more {
 .ak-progress-meter .ak-progress-holder {
     margin: 0;
     width: 100%;
-    background: #e7e7e7;
+    background: #ebebeb;
     padding: 3px;
 }
 
