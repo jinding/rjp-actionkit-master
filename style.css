@@ -2286,7 +2286,7 @@ span.ak-target-separator {
     height: 1.52em;
     text-align: center;
     background: #fff;
-    color: #4b4b4b;
+    color: #000;
     position: relative;
     top: -1px;
     margin: 2px;
@@ -2332,7 +2332,7 @@ span.ak-target-separator {
     }
     .ak-steps-area h3 div.ak-step-number {
         /* border: 2px solid #fff; */
-        background: #4b4b4b;
+        background: #000;
         color: #fff;
     }
     .ak-steps-area h3 .ak-arrow-holder {
