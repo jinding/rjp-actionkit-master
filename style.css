@@ -1810,7 +1810,7 @@ div.ak-text-expander p:first-child {
     div.ak-text-expander {
         max-height: 100%;
         overflow: visible;
-        margin-bottom: 10px;
+        margin-bottom: 1.5em;
     }
     div.ak-text-expander p:first-child {
         margin-top: 10px;
@@ -1841,7 +1841,7 @@ div.ak-text-expander.ak-truncated + .ak-read-more {
     div.ak-text-expander {
         max-height: 100%;
         overflow: visible;
-        margin-bottom: 10px;
+        margin-bottom: 1.5em;
     }
     div.ak-text-expander p:first-child {
         margin-top: 10px;
