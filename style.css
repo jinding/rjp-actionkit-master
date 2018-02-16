@@ -1872,7 +1872,7 @@ div.ak-text-expander.ak-truncated + .ak-read-more {
 }
 
 .ak-progress-meter .ak-progress-bar {
-    background: #884974;
+    background: #0079bb;
     height: 30px;
 }
 
@@ -1883,7 +1883,7 @@ div.ak-text-expander.ak-truncated + .ak-read-more {
     line-height: 1;
     font-weight: 600;
     margin: 3px 10px 0 6px;
-    color: #884974;
+    color: #0079bb;
 }
 .ak-progress-meter .ak-progress-goals {
     display: inline-block;
