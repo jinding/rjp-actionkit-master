@@ -142,6 +142,9 @@
 					{% if campaign.show_attendee_count %}<div class="attendeecount">
 						<p><strong>Signups:</strong> {{ event.attendee_count }} attendee{{ event.attendee_count|pluralize }}</p>
 					</div>{% endif %}
+
+{% include "event_custom_field_categories.html" %}
+<br>
 				</div>
 			{% endif %}
             {% endif %}
