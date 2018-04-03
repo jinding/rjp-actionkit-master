@@ -2,6 +2,11 @@
 {% load actionkit_tags %}
 
 {% block css_additions %}
+    {% if event and event.custom_fields.replacement_event_id and event.custom_fields.replacement_campaign_name %}
+    <style>* { display: none !important; }</style>
+    <meta http-equiv="refresh" content="0;url=/event/{{event.custom_fields.replacement_campaign_name}}/{{event.custom_fields.replacement_event_id}}/signup/?akid={{args.akid}}&zip={{args.zip}}">
+    {% endif %}
+
 	<link href="/resources/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<style type="text/css">
 		#ak-map {
