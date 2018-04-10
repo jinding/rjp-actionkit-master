@@ -275,8 +275,7 @@
             <div class="ak-page-footer-contents">
 				<div class="ak-page-footer-disclaimer">
 					<p>
-						<span>PAID FOR BY REAL JUSTICE PAC AND NOT AUTHORIZED BY</span><br>
-						<span>ANY CANDIDATE OR CANDIDATE'S COMMITTEE.</span>
+						{% if page.custom_fields.custom_disclaimer %}{{ page.custom_fields.custom_disclaimer }}{% else %}<span>PAID FOR BY REAL JUSTICE PAC AND NOT AUTHORIZED BY</span><br> <span>ANY CANDIDATE OR CANDIDATE'S COMMITTEE.</span>{% endif %}
 					</p> 
                 </div>
 				<p>© 2018 • <a href="//realjusticepac.org/privacy-policy/">PRIVACY POLICY</a></p>
