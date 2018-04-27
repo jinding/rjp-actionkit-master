@@ -43,7 +43,7 @@
                 </div>
                 {% endfor %}
 
-                <button type="submit" class="ak-submit-button">Submit Survey</button>
+                <button type="submit" class="ak-submit-button">{% if page.custom_fields.submit_button_name %}{{ page.custom_fields.submit_button_name }}{% else %}Submit Survey{% endif %}</button>
             </div>
         </div>
 

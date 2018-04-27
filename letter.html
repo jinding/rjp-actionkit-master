@@ -48,7 +48,7 @@
 
                 {# Optional TAF {% include "./inline_tellafriend.html" %} #}
 
-                <button type="submit" class="ak-submit-button">Send Letter</button>
+                 <button type="submit" class="ak-submit-button">{% if page.custom_fields.submit_button_name %}{{ page.custom_fields.submit_button_name }}{% else %}Send Letter{% endif %}</button>
 
             </div>
 
