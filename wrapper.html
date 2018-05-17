@@ -16,8 +16,10 @@
     {% block share_metatags %}
     {% if event and page.custom_fields.override_event_share_metatags and page.custom_fields.override_event_share_metatags_id_list %}
         {% if event.id|slugify in page.custom_fields.override_event_share_metatags_id_list|split:"," %}
+        correct event
             {% for eventshare in page.custom_fields.override_event_share_metatags|split:"*||*" %}
                 {% if event.id|add:"0" == eventshare|split:"*|*"|nth:0|add:"0" %}
+                correct event
                     <meta property="og:title" content="{{ eventshare|split:'*|*'|nth:1 }}" />
                     <meta property="og:description" content="{{ eventshare|split:'*|*'|nth:2 }}" />
                     <meta property="og:image" content="{{ eventshare|split:'*|*'|nth:3 }}" />
