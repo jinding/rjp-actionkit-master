@@ -14,10 +14,21 @@
     <meta name="msapplication-TileImage" content="https://realjusticepac.org/wp-content/uploads/2018/02/cropped-favicon-270x270.png" />
 
     {% block share_metatags %}
-    {{ page.followup.share_title_tag }}
-    {{ page.followup.share_description_tag }}
-    {{ page.followup.share_image_tag }}
-    {{ page.followup.share_url_tag }}
+    {% if event and page.custom_fields.override_event_share_metatags %}
+        {% for eventshare in page.custom_fields.override_event_share_metatags|split:"*||*" %}
+            custom sharing
+            {{ event.id }}
+            {{ eventshare|split:"*|*"|nth:0 }}
+            {{ eventshare|split:"*|*"|nth:1 }}
+            {{ eventshare|split:"*|*"|nth:2 }}
+            {{ eventshare|split:"*|*"|nth:3 }}
+        {% endfor %}
+    {% else %}
+        {{ page.followup.share_title_tag }}
+        {{ page.followup.share_description_tag }}
+        {{ page.followup.share_image_tag }}
+        {{ page.followup.share_url_tag }}
+    {% endif %}
     <meta property="og:site_name" content="{% filter ak_text:"org_name" %}{% client_name %}{% endfilter %}">
     <meta property="og:type" content="article">
     <meta name="twitter:card" value="summary">
@@ -268,18 +279,17 @@
         {% block content %}{% endblock %}
 
     </div>
-	<div class="ak-page-divider">
-		<div class="ak-page-divider-angle"></div>
-	</div>
-	<div class="ak-page-footer">
+    <div class="ak-page-divider">
+        <div class="ak-page-divider-angle"></div>
+    </div>
+    <div class="ak-page-footer">
             <div class="ak-page-footer-contents">
-				<div class="ak-page-footer-disclaimer">
-					<p>
-						<span>PAID FOR BY REAL JUSTICE PAC AND NOT AUTHORIZED BY</span><br>
-						<span>ANY CANDIDATE OR CANDIDATE'S COMMITTEE.</span>
-					</p> 
+                <div class="ak-page-footer-disclaimer">
+                    <p>
+                        {% if page.custom_fields.custom_disclaimer %}{{ page.custom_fields.custom_disclaimer }}{% else %}<span>PAID FOR BY REAL JUSTICE PAC AND NOT AUTHORIZED BY</span><br> <span>ANY CANDIDATE OR CANDIDATE'S COMMITTEE.</span>{% endif %}
+                    </p> 
                 </div>
-				<p>© 2018 • <a href="//realjusticepac.org/privacy-policy/">PRIVACY POLICY</a></p>
+                <p>© 2018 • <a href="//realjusticepac.org/privacy-policy/">PRIVACY POLICY</a></p>
             </div>
         </div>
 
@@ -301,7 +311,7 @@
     ga('send', 'pageview'); 
     </script>
     {% endif %}
-	<!-- Facebook Pixel Code -->
+    <!-- Facebook Pixel Code -->
     <script>
       !function(f,b,e,v,n,t,s)
       {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -318,6 +328,16 @@
       src="https://www.facebook.com/tr?id=1072870819484033&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Facebook Pixel Code -->
+    <!-- Global site tag (gtag.js) - Google AdWords: 850114385 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-850114385"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-850114385');
+    </script>
+    <!-- End global site tag -->
 </body>
 </html>
 
