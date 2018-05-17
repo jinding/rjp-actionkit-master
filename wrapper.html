@@ -15,7 +15,7 @@
 
     {% block share_metatags %}
     {% if event and page.custom_fields.override_event_share_metatags %}
-        {% if event.id in page.custom_fields.override_event_share_metatags|split:"*||*"|split:"*|*" %}
+        {% if page.custom_fields.override_event_share_metatags|split:"*||*"|split:"*|*"|contains:event.id %}
             correct event
             {% for eventshare in page.custom_fields.override_event_share_metatags|split:"*||*" %}
                 {% if event.id|add:"0" == eventshare|split:"*|*"|nth:0|add:"0" %}
