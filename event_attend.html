@@ -2,6 +2,11 @@
 {% load actionkit_tags %}
 
 {% block css_additions %}
+    {% if event and event.custom_fields.replacement_event_id and event.custom_fields.replacement_campaign_name %}
+    <style>* { display: none !important; }</style>
+    <meta http-equiv="refresh" content="0;url=/event/{{event.custom_fields.replacement_campaign_name}}/{{event.custom_fields.replacement_event_id}}/signup/?akid={{args.akid}}&zip={{args.zip}}">
+    {% endif %}
+
 	<link href="/resources/leaflet/leaflet.css" rel="stylesheet" type="text/css">
 	<style type="text/css">
 		#ak-map {
@@ -62,7 +67,7 @@ $(window).on('load', function (){
         <div class="ak-grid-row">
             <div class="ak-grid-col ak-grid-col-12-of-12">
                 {% if not update %}
-                    <h2>{{ event.title }}</h2>
+                    <h2 style="margin-bottom:10px;">{{ event.title }}</h2>
                 {% else %}
                     <h2>Update Signup Information</h2>
                 {% endif %}
@@ -85,11 +90,11 @@ $(window).on('load', function (){
                 {% if not update %}
                     {% if event.is_open_for_signup %}
                         {% if open_events|length|subtract:1 > 0 %}
-                            <a href="https://map.abdulformichigan.com/?zipcode={{args.zip}}&source={{args.source}}">Search for another event</a>.
+                            <a href="https://map.realjusticepac.org/?zipcode={{args.zip}}&source={{args.source}}">Search for another event</a>.
                         {% endif %}
                     {% else %}
                         {% if open_events|length > 0 %}
-                            <a href="https://map.abdulformichigan.com/?zipcode={{args.zip}}&source={{args.source}}">Search for another event</a>.
+                            <a href="https://map.realjusticepac.org/?zipcode={{args.zip}}&source={{args.source}}">Search for another event</a>.
                         {% endif %}
                     {% endif %}
                 </p>
@@ -121,8 +126,7 @@ $(window).on('load', function (){
             </div>
 
             <div class="ak-grid-col ak-grid-col-6-of-12">
-                <h3>RSVP to attend this event</h3>
-                <div id="event-attend-form" class="{{templateset.custom_fields.field_errors_class|default:"ak-errs-below"}}">
+                <div id="event-attend-form" class="{{templateset.custom_fields.field_errors_class|default:"ak-errs-below"}}" style="margin-top:25px;">
                     <div class="{{templateset.custom_fields.field_labels_class|default:"ak-labels-overlaid"}}">
                         {% if not update %}
                         {% include "./user_form_wrapper.html" %}
@@ -136,7 +140,10 @@ $(window).on('load', function (){
                             <p>Need to sign up with another email address?  <a href="?" onclick="window.actionkit.args = {}; return actionkit.forms.logOut()">Click here.</a></p>
                         </div>
                         {% endif %}
-
+                        <!-- Allow for customization for a given event on the signup form -->
+                        {% if templateset.custom_fields.event_user_form_code %}
+                            {% include_tmpl templateset.custom_fields.event_user_form_code %}
+                        {% endif %}
                     </div>
             
                     {% if form.ground_rules|is_nonblank and not update %}
@@ -155,7 +162,7 @@ $(window).on('load', function (){
                         <input type="hidden" name="event_signup_ground_rules" value="1">
                     {% endif %}
                     <div>
-                    <button type="submit" class="ak-submit-button">{% if update %}Update signup{% else %}{% if page.custom_fields.submit_button_name %}{{ page.custom_fields.submit_button_name }}{% else %}Sign up for event{% endif %}{% endif %}</button>
+                    <button type="submit" class="ak-submit-button">{% if update %}Update signup{% else %}{% if page.custom_fields.submit_button_name %}{{ page.custom_fields.submit_button_name }}{% else %}RSVP to Attend{% endif %}{% endif %}</button>
                     </div>
                 </div>           
             </div>

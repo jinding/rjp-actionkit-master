@@ -1,6 +1,13 @@
 {% extends "./wrapper.html" %}
 {% load actionkit_tags %}
 
+{% block css_additions %}
+{% if event and event.custom_fields.replacement_event_id and event.custom_fields.replacement_campaign_name %}
+<style>* { display: none !important; }</style>
+<meta http-equiv="refresh" content="0;url=/event/{{event.custom_fields.replacement_campaign_name}}/{{event.custom_fields.replacement_event_id}}/host/?akid={{args.akid}}&zip={{args.zip}}">
+{% endif %}
+{% endblock %}
+
 {% block script_additions %}
 
 <script type="text/javascript">
@@ -148,7 +155,11 @@
     <!-- Title -->
     <div class="ak-grid-row">
         <div class="ak-grid-col ak-grid-col-12-of-12">
-                <h2>Event tools</h2>
+                <h2>{% if campaign.use_title and campaign.show_title and event.title %}
+                    {{ event.title }}
+                    {% else %}
+                    {{ campaign.local_title }}
+                    {% endif %} </h2>
 
             <!-- Message from mothership -->
             <div id="host-tools-intro">

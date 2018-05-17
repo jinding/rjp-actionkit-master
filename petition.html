@@ -50,7 +50,7 @@
                                 </p>
                         {% endif %}
                 
-                        <div class="ak-margin-bottom-1">
+                        <div class="ak-margin-bottom-1" style="font-size:0.9em;">
                             {% include_tmpl form.statement_text %}
                         </div>
                 {% endif %}
@@ -64,7 +64,7 @@
 
                     {# Optional TAF {% include "./inline_tellafriend.html" %} #}
 
-                    <button type="submit" class="ak-submit-button">Sign</button>
+                    <button type="submit" class="ak-submit-button">{% if page.custom_fields.submit_button_name %}{{ page.custom_fields.submit_button_name }}{% else %}Sign{% endif %}</button>
                 </div>
 
             </div>  

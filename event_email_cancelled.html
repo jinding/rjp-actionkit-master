@@ -1,14 +1,52 @@
-Subject: Your "{{campaign_title}}" event has been cancelled
+Subject: {% if user.id == event.creator.id and "moderation_not_approved"|is_in:event.notes %}Your "{{campaign_title}}" event doesn't (yet) meet our criteria for approval.{% else %}Your "{{campaign_title}}" event has been cancelled{% endif %}
 
 {% load actionkit_tags %}
+{% if user.id == event.creator.id and "moderation_not_approved"|is_in:event.notes %}
+<p>We checked out your event and it doesn’t <i>yet</i> meet our criteria for approval.</p>
+
+<p>We’d like to invite you to consider updating the event so we can review it again for approval. Here are some reasons which prevent us from approving an event. If you can change your event listing to comply with our guidelines, we’d be happy to approve it.</p>
+
+<ul>
+  <li>
+    Reason 1
+  </li>
+  <li>
+    Reason 2
+  </li>
+  <li>
+    <li>
+      Events must have a specific street address so they can be placed on the map.
+    </li>
+</ul>
+
+<p>
+  If possible, please update your event to abide by the above guidelines please resubmit it for approval:
+</p>
+
+<p>
+  <a href="https://{% client_domain %}/event/{{ campaign.local_name }}/create/?prefill=1&event_title={{ event.title|default:''|urlencode }}&event_starts_at_date={{ event.starts_at|date:'m/d/Y'|urlencode }}&event_starts_at_time={{ event.starts_at|date:'g:i'|urlencode }}&event_starts_at_ampm={{ event.starts_at|date:'A' }}&event_max_attendees={{ event.max_attendees|default:'' }}&{% for category in event.custom_fields.event_category|force_list %}action_event_category={{ category }}&{% endfor %}event_venue={{ event.venue|default:''|urlencode }}&event_address1={{ event.address1|default:''|urlencode }}&event_city={{ event.city|default:''|urlencode }}&event_state={{ event.state|default:''|urlencode }}&event_zip={{ event.zip|default:'' }}&event_public_description={{ event.public_description|default:''|urlencode }}&event_directions={{ event.directions|default:''|urlencode }}">Click here to update and resubmit your event</a>
+</p>
+
+<p>
+  Best,
+</p>
+<p>
+  Events Team
+  <br>
+  Real Justice PAC
+</p>
+
+{% else %}
+
 <p>The "{{ campaign.local_title }}" event you signed up for has been cancelled.</p>
 
 <p>You can search for other events here:</p>
 
 <p><a href="{% client_domain_url %}event/{{ campaign.local_name }}/search/">{% client_domain_url %}event/{{ campaign.local_name }}/search/</a></p>
+{% endif %}
 
 <!-- Replacement for unsubscribe. -->
 <p><small>
-    You received this message because you were signed up for an event.  
-    You won't receive any more messages about this event.
+  You received this message because you were signed up for an event.
+  You won't receive any more messages about this event.
 </small></p>

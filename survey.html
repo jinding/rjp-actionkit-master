@@ -32,7 +32,7 @@
             
         </div>
         <div id="ak-survey-questions" class="ak-grid-col ak-grid-col-8-of-12">
-            <div class="ak-field-box ak-field-box-padded ak-styled-fields ak-labels-above {{templateset.custom_fields.field_errors_class|default:"ak-errs-below"}}">
+            <div class="ak-field-box ak-field-box-padded ak-field-box-borderless ak-styled-fields ak-labels-above {{templateset.custom_fields.field_errors_class|default:"ak-errs-below"}}">
 
                 {% for question in form.surveyquestion_set.all %}
                 <div>
@@ -43,7 +43,7 @@
                 </div>
                 {% endfor %}
 
-                <button type="submit" class="ak-submit-button">Submit Survey</button>
+                <button type="submit" class="ak-submit-button">{% if page.custom_fields.submit_button_name %}{{ page.custom_fields.submit_button_name }}{% else %}Submit Survey{% endif %}</button>
             </div>
         </div>
 
