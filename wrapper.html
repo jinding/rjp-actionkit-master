@@ -16,18 +16,11 @@
     {% block share_metatags %}
     {% if event and page.custom_fields.override_event_share_metatags %}
         {% for eventshare in page.custom_fields.override_event_share_metatags|split:"*||*" %}
-                {{ event.id }}<br>
-                {{ eventshare|split:'*|*'|nth:0 }}
-                <meta property="og:title" content="{{ eventshare|split:'*|*'|nth:1 }}" />
-                <meta property="og:description" content="{{ eventshare|split:'*|*'|nth:1 }}" />
-                <meta property="og:image" content="{{ eventshare|split:'*|*'|nth:2 }}" />
-                <meta property="og:url" content="{{ eventshare|split:'*|*'|nth:3 }}" />
             {% if event.id|add:"0" == eventshare|split:"*|*"|nth:0|add:"0" %}
-                event is the correct one
                 <meta property="og:title" content="{{ eventshare|split:'*|*'|nth:1 }}" />
-                <meta property="og:description" content="{{ eventshare|split:'*|*'|nth:1 }}" />
-                <meta property="og:image" content="{{ eventshare|split:'*|*'|nth:2 }}" />
-                <meta property="og:url" content="{{ eventshare|split:'*|*'|nth:3 }}" />
+                <meta property="og:description" content="{{ eventshare|split:'*|*'|nth:2 }}" />
+                <meta property="og:image" content="{{ eventshare|split:'*|*'|nth:3 }}" />
+                <meta property="og:url" content="{{ eventshare|split:'*|*'|nth:4 }}" />
             {% else %}
                 {{ page.followup.share_title_tag }}
                 {{ page.followup.share_description_tag }}
