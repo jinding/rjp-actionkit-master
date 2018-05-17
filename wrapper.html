@@ -24,7 +24,7 @@
                     <meta property="og:description" content="{{ eventshare|split:'*|*'|nth:2 }}" />
                     <meta property="og:image" content="{{ eventshare|split:'*|*'|nth:3 }}" />
                     <meta property="og:url" content="{{ eventshare|split:'*|*'|nth:4 }}" />
-                {% else %}
+                {% endif %}
             {% endfor %}
         {% else %}
             not correct event
