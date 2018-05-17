@@ -16,12 +16,19 @@
     {% block share_metatags %}
     {% if event and page.custom_fields.override_event_share_metatags %}
         {% for eventshare in page.custom_fields.override_event_share_metatags|split:"*||*" %}
-            custom sharing
-            {{ event.id }}
-            {{ eventshare|split:"*|*"|nth:0 }}
-            {{ eventshare|split:"*|*"|nth:1 }}
-            {{ eventshare|split:"*|*"|nth:2 }}
-            {{ eventshare|split:"*|*"|nth:3 }}
+            {% if event.id = eventshare|split:"*|*"|nth:0 %}
+                custom sharing
+                {{ event.id }}
+                {{ eventshare|split:"*|*"|nth:0 }}
+                {{ eventshare|split:"*|*"|nth:1 }}
+                {{ eventshare|split:"*|*"|nth:2 }}
+                {{ eventshare|split:"*|*"|nth:3 }}
+            {% else %}
+                {{ page.followup.share_title_tag }}
+                {{ page.followup.share_description_tag }}
+                {{ page.followup.share_image_tag }}
+                {{ page.followup.share_url_tag }}
+            {% endif %}
         {% endfor %}
     {% else %}
         {{ page.followup.share_title_tag }}
